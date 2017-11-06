@@ -3,4 +3,5 @@
 *.pyc
 *.pyo
 *.pyw
+.DS_Store
 
