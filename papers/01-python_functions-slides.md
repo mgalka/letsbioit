@@ -34,7 +34,9 @@ def new_book(title, author, cover_type='paperback',
 - Value placed after the `return` statement becomes function value.
 
 ## Function call
-- Function is called by specifying its name 
+- Function is called by specifying its name and parethesis - `()`
+- `()` is a function call operator in Python.
+- If function requires arguments they should be provided as a comma separated values between the brackets.
 
 ## Parameters vs. arguments
 - A **parameter** is a variable which is a part of the function signature.

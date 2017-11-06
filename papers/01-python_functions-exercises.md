@@ -47,6 +47,7 @@ _Tips_
 
 - To branch the code execution due to a logical condition use the `if` instruction.
 - To add element to the list use it's `.append()` method.
+
 ```python
 l = []
 l.append(1)
