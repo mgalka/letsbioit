@@ -23,3 +23,6 @@ Define additional attribute `max_load` that will be available in each `Truck` in
 
 ## Step 4
 Define a method `repaint()` for each `Car` instance.
+This method should take a single argument - the color name and change the value of the `color` attribute of the instance.
+
+
