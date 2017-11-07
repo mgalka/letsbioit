@@ -30,6 +30,21 @@ class ComputerPlayer(Player):
         return random.choice(list(self.choices.keys()))
 
 
+class HumanPlayer(Player):
+    def get_name(self):
+        return input('Enter your name: ')
+
+    def _display_choices(self):
+        for k, v in self.choices.items():
+            print('{} - {}'.format(k, v))
+
+    def next_move(self):
+        self._display_choices()
+        move = None
+        while move not in list(self.choices.keys()):
+            move = input('Choose next move: ')
+        return move
+
 class Game:
     winner_table = {
         ('p', 'r'): 0,
