@@ -33,7 +33,7 @@
 - Attributes and methodes are accessed with a ``.`` (dot) operator.
 
 ## Class and object
-![](images/png/class-object.png){width=300}
+![](images/png/class-object.png){width=200}
 
 - Classes are the objects definitions.
 - They contain a special method which is used to construct and initialize the new object.
