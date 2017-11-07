@@ -40,7 +40,7 @@ class DailyReport(luigi.Task)
     date = luigi.DateParameter(default=datetime.date.today())
 ```
 
-You can pass a date via command line
+You can pass a date via command line~
 
 ```bash
 --date 2012-05-10
