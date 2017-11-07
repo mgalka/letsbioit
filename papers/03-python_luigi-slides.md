@@ -27,6 +27,7 @@ luigi --module top_artists AggregateArtists --local-scheduler --date-interval 20
 
 ## Task
 This is where computation is done. It consists of:
+
 - `param = luigi.Parameter(default=42)` - parameter declaration
 - `requires()` - defines a list of tasks that need to be finished before current task is executed
 - `run()` - this is where computation happens
