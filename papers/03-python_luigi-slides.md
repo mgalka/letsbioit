@@ -27,15 +27,17 @@ if result.returncode == 0:
 ### 1
 Implement a script that lists users logged in to Linux
 
-Tip: `w` is the command that lists all logged in users
+_Tip_: `w` is the command that lists all logged in users
 
 ### 2
 Modify previous script so that it displays only user names
 
-Tip: use `result.stdout.split("\n")` to split the whole output into lines
+_Tip_: use `result.stdout.split("\n")` to split the whole output into lines
 
 # Luigi
+
 ## What is Luigi
+
 Luigi is framework used for managing long running jobs and making sure the processing is fully executed.
 
 ## Installation
@@ -51,6 +53,7 @@ PYTHONPATH='.' luigi --module sample PrintAll --local-scheduler --input-file ./s
 ```
 
 ## Basic building blocks
+
 - `Target` - usually a single file `LocalTarget` or a database entry `MySqlTarget` it is the source and/or the destination of the processing done by the `Task`
 - `Task` - single step in processing workflow, it might be reading the content of the file, running a command or just a milestone when all of the previous tasks were executed
 - `Parameter` -
@@ -61,6 +64,7 @@ PYTHONPATH='.' luigi --module sample PrintAll --local-scheduler --input-file ./s
 
 ## Task
 This is where computation is done. It consists of:
+
 - `param = luigi.Parameter(default=42)` - parameter declaration
 - `requires()` - defines a list of tasks that need to be finished before current task is executed
 - `run()` - this is where computation happens
