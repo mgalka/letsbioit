@@ -5,9 +5,9 @@ from os import listdir
 
 from os.path import dirname, basename
 
+import luigi
 
 class ReadChromosome(luigi.Task):
-    # bacteriophag 4a
     input_file = luigi.Parameter()
 
     def requires(self):

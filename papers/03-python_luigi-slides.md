@@ -1,5 +1,28 @@
 % Python
 
+# Subprocess
+## Starting subprocess from Python
+`subprocess` Python module provides functionality to execute other programs from inside of Python script.
+
+```Python
+import subprocess
+
+subprocess.run(["ls", "-l"])
+```
+
+## Checking process status
+
+```Python
+import subprocess
+
+result = subprocess.run(["ls", "-l"], stdout=subprocess.PIPE, encoding="utf-8")
+
+if result.returncode == 0:
+    print(result.stdout)
+```
+
+`returncode` describes if the command was executed successfully - then it has a value of 0 or if the command failed (value other than 0)
+
 # Luigi
 ## What is Luigi
 Luigi is framework used for managing long running jobs and making sure the processing is fully executed.
@@ -13,7 +36,7 @@ pip install luigi==2.7.1
 ## Running Luigi locally
 
 ```bash
-luigi --module top_artists AggregateArtists --local-scheduler --date-interval 2012-06
+PYTHONPATH='.' luigi --module sample PrintAll --local-scheduler --input-file ./sequence.fasta
 ```
 
 ## Basic building blocks
