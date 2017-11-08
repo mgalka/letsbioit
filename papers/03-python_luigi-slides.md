@@ -46,10 +46,32 @@ In server environment it also provides monitoring of the execution and dependenc
 pip install luigi==2.7.1
 ```
 
+## Running Luigi with central scheduler
+Running a central scheduler that is used to manage a workers pool and provides GUI to monitor it [http://localhost:8082/](http://localhost:8082/)
+
+```bash
+luigid
+```
+
+Then it is enough to schedule luigi job
+
+```bash
+export PYTHONPATH='.'
+luigi --module longrunning LongRunningParent
+```
+
+## Multiple workers
+
+```bash
+export PYTHONPATH='.'
+luigi --module longrunning LongRunningParent --workers 3
+```
+
 ## Running Luigi locally
 
 ```bash
-PYTHONPATH='.' luigi --module sample PrintAll --local-scheduler --input-file ./sequence.fasta
+export PYTHONPATH='.'
+luigi --module sample PrintAll --local-scheduler --input-file ./sequence.fasta
 ```
 
 ## Basic building blocks

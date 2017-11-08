@@ -32,7 +32,7 @@ class LongRunning(luigi.Task):
     name = luigi.Parameter()
 
     def requires(self):
-        return [QuickRunning('a')]
+        return [QuickRunning('a'), QuickRunning('b')]
 
     def run(self):
         sleep(10)
