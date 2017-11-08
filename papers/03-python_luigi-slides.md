@@ -23,6 +23,17 @@ if result.returncode == 0:
 
 `returncode` describes if the command was executed successfully - then it has a value of 0 or if the command failed (value other than 0)
 
+## Excercises
+### 1
+Implement a script that lists users logged in to Linux
+
+Tip: `w` is the command that lists all logged in users
+
+### 2
+Modify previous script so that it displays only user names
+
+Tip: use `result.stdout.split("\n")` to split the whole output into lines
+
 # Luigi
 ## What is Luigi
 Luigi is framework used for managing long running jobs and making sure the processing is fully executed.
@@ -50,7 +61,6 @@ PYTHONPATH='.' luigi --module sample PrintAll --local-scheduler --input-file ./s
 
 ## Task
 This is where computation is done. It consists of:
-
 - `param = luigi.Parameter(default=42)` - parameter declaration
 - `requires()` - defines a list of tasks that need to be finished before current task is executed
 - `run()` - this is where computation happens
