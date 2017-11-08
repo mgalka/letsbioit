@@ -1,11 +1,11 @@
 import re
 
-import luigi
 from os import listdir
 
 from os.path import dirname, basename
 
 import luigi
+
 
 class ReadChromosome(luigi.Task):
     input_file = luigi.Parameter()

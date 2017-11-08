@@ -92,9 +92,8 @@ luigi --module sample PrintAll --local-scheduler --input-file ./sequence.fasta
 ## Parameters
 
 ```python
-import luigi
-class DailyReport(luigi.Task)
-    date = luigi.DateParameter(default=datetime.date.today())
+class DailyReport(luigi.Task):
+    date = luigi.DateParameter(default=dt.date.today())
 ```
 
 You can pass a date via command line
