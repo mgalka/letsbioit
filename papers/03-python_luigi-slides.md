@@ -23,6 +23,31 @@ if result.returncode == 0:
 
 `returncode` describes if the command was executed successfully - then it has a value of 0 or if the command failed (value other than 0)
 
+## I don't have `subprocess.run()` in my Python
+
+- Python interpreters before 3.5 may miss the `run()` method.
+- In such case you may want to use `call()` and `check_output` methods.
+
+## `subprocess.call()` and `subprocess.check_output()`
+```python
+import subprocess
+
+ret_code = subprocess.call(["ls", "-l"])
+
+print(ret_code)
+```
+---
+
+```python
+import subprocess
+
+output = subprocess.check_output(["ls", "-l"])
+output_str = output.decode('utf-8')
+
+print(output)
+print(output_str)
+```
+
 ## Excercises
 ### 1
 Implement a script that lists users logged in to Linux
@@ -39,6 +64,24 @@ _Tip_: use `result.stdout.split("\n")` to split the whole output into lines
 Luigi is framework used for managing long running jobs and making sure the processing is fully executed.
 
 In server environment it also provides monitoring of the execution and dependency visualisation.
+
+## Create Virtualenv
+
+```bash
+mkdir ~/venv
+python3 -m venv ~/venv/luigi
+
+source ~/venv/luigi/activate
+```
+
+---
+
+```bash
+mkdir ~/venv
+virtualenv ~/venv/luigi
+
+source ~/venv/luigi/activate
+```
 
 ## Installation
 
