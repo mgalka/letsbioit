@@ -57,7 +57,7 @@ _Tip_: `w` is the command that lists all logged in users
 ### 2
 Modify previous script so that it displays only user names
 
-_Tip_: use `result.stdout.split("\n")` to split the whole output into lines
+_Tip_: use `result.split("\n")` to split the whole output into lines. `result` is the variable where you saved your command output.
 
 # Luigi
 ## What is Luigi
