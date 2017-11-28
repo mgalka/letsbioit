@@ -61,7 +61,7 @@ _Tip_: use `result.split("\n")` to split the whole output into lines. `result` i
 
 # Luigi
 ## What is Luigi
-Luigi is framework used for managing long running jobs and making sure the processing is fully executed.
+Luigi is a framework used for managing long running jobs and making sure the processing is fully executed.
 
 In server environment it also provides monitoring of the execution and dependency visualisation.
 
