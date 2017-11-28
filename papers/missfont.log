@@ -1,0 +1,12 @@
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Regular-tosf-ts1--base
+mktexpk --mfmode / --bdpi 600 --mag 1+57/600 --dpi 657 FiraMono-Regular-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Bold-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Bold-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Regular-tosf-ts1--base
+mktexpk --mfmode / --bdpi 600 --mag 1+57/600 --dpi 657 FiraMono-Regular-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Bold-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Regular-tosf-ts1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Bold-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 1+57/600 --dpi 657 FiraMono-Regular-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Bold-tosf-t1--base
+mktexpk --mfmode / --bdpi 600 --mag 0+540/600 --dpi 540 FiraMono-Bold-tosf-t1--base
