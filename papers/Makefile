@@ -6,7 +6,7 @@ PRINTOUTS := $(patsubst %-slides.md,%-slides-print.pdf,$(wildcard *-slides.md))
 BEAMER_DIR := texfiles/beamer
 BEAMER_THEME_DIR := $(BEAMER_DIR)/themes
 TEMPLATE_DIR := texfiles
-MAKEFILE_PATH := $$PATH:$(BEAMER_THEME_DIR):$(TEMPLATE_DIR)
+_PATH := $$PATH:$(BEAMER_THEME_DIR):$(TEMPLATE_DIR)
 
 
 all : $(SLIDES) $(INC_SLIDES) $(PRINTOUTS) $(EXERCISES)
@@ -16,11 +16,11 @@ exercises : $(EXERCISES)
 print : $(SLIDES) $(PRINTOUTS)
 
 %-slides.pdf : %-slides.md
-	PATH=$(MAKEFILE_PATH) pandoc -t beamer -V theme:metropolis -H $(BEAMER_DIR)/header.tex \
+	PATH=$(_PATH) pandoc -t beamer -V theme:metropolis -H $(BEAMER_DIR)/header.tex \
 	--slide-level 2 -V handout --listings $^ -o $@ -fmarkdown-implicit_figures
 
 %-slides-inc.pdf : %-slides.md
-	PATH=$(MAKEFILE_PATH) pandoc -t beamer -V theme:metropolis -H $(BEAMER_DIR)/header.tex \
+	PATH=$(_PATH) pandoc -t beamer -V theme:metropolis -H $(BEAMER_DIR)/header.tex \
 	--slide-level 2 --incremental --listings $^ -o $@ -fmarkdown-implicit_figures
 		
 %-exercises.pdf : %-exercises.md
