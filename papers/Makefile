@@ -9,7 +9,7 @@ TEMPLATE_DIR := texfiles
 MAKEFILE_PATH := $$PATH:$(BEAMER_THEME_DIR):$(TEMPLATE_DIR)
 
 
-all : $(SLIDES) $(INC_SLIDES) $(PRINTOUTS)
+all : $(SLIDES) $(INC_SLIDES) $(PRINTOUTS) $(EXERCISES)
 slides : $(SLIDES)
 presentation : $(INC_SLIDES)
 exercises : $(EXERCISES)
