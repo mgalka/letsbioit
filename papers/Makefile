@@ -1,4 +1,5 @@
 SLIDES := $(patsubst %-slides.md,%-slides.pdf,$(wildcard *-slides.md))
+REVEAL_SLIDES := $(patsubst %-slides.md,%-slides.html,$(wildcard *-slides.md))
 INC_SLIDES := $(patsubst %-slides.md,%-slides-inc.pdf,$(wildcard *-slides.md))
 EXERCISES := $(patsubst %-exercises.md,%-exercises.pdf,$(wildcard *-exercises.md))
 PRINTOUTS := $(patsubst %-slides.md,%-slides-print.pdf,$(wildcard *-slides.md))
@@ -6,6 +7,7 @@ PRINTOUTS := $(patsubst %-slides.md,%-slides-print.pdf,$(wildcard *-slides.md))
 BEAMER_DIR := texfiles/beamer
 BEAMER_THEME_DIR := $(BEAMER_DIR)/themes
 TEMPLATE_DIR := texfiles
+REVEAL_DIR := ./reveal-js
 _PATH := $$PATH:$(BEAMER_THEME_DIR):$(TEMPLATE_DIR)
 
 
@@ -14,6 +16,10 @@ slides : $(SLIDES)
 presentation : $(INC_SLIDES)
 exercises : $(EXERCISES)
 print : $(SLIDES) $(PRINTOUTS)
+reveal : $(REVEAL_SLIDES)
+
+%-slides.html : %-slides.md
+	pandoc -t revealjs -s $^ -o $@ -V revealjs-url=$(REVEAL_DIR)
 
 %-slides.pdf : %-slides.md
 	PATH=$(_PATH) pandoc -t beamer -V theme:metropolis -H $(BEAMER_DIR)/header.tex \
@@ -35,3 +41,4 @@ clean :
 	rm -f $(INC_SLIDES)
 	rm -f $(EXERCISES)
 	rm -f $(PRINTOUTS)
+	rm -f $(HTML_SLIDES)
